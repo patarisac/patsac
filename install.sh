@@ -7,4 +7,4 @@ then
     mkdir $inst_path
 fi
 
-cp -r src/*.py $inst_path
+cp -r src/* $inst_path
