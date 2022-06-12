@@ -11,7 +11,7 @@ python3 --version
 ```
 ### Clone the repo
 ```bash
-git clone xxx
+git clone https://github.com/patarisac/patsac.git
 ```
 ### Install the requirements
 ```bash
