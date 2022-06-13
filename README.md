@@ -1,7 +1,7 @@
 # patsac
 
 ## Description
-`patsac` is python library that i created to help me solved cryptography CTF challenges because sometimes I'm too lazy to import every python library. `patsac` just imports the other libraries I usually need with a little extra scripts that I wrote.
+`patsac` is a Python toolkit that I created to help me solve cryptography CTF challenges. `patsac` is still in development and not well-written yet.
 
 
 ## How to install
@@ -23,12 +23,15 @@ python3 -m pip install -r requirements.txt
 ```
 
 ## Example usage
-```python3
+```python
 import patsac
 ```
-```python3
+```python
 from patsac.lcg import *
 ```
-```python3
+```python
+from patsac import rsa
+```
+```python
 from patsac import *
 ```
