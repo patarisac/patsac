@@ -9,4 +9,5 @@ then
     mkdir $inst_path
 fi
 
+rm -r $inst_path/*
 cp -r src/* $inst_path
