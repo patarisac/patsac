@@ -8,7 +8,7 @@ from patsac.libraries import gcdext, gcd, reduce, invert
 
 def _crack_unknown_increment(states, modulus, multiplier):
     increment = (states[1] - states[0] * multiplier) % modulus
-    return modulus, multiplier, increment
+    return int(modulus), int(multiplier), int(increment)
 
 
 def _crack_unknown_multiplier(states, modulus):
@@ -29,25 +29,28 @@ class LCG:
         self.m = multiplier
         self.c = increment
         self.n = modulus
-        self.state = seed % modulus
+        try:
+            self.state = seed % modulus
+        except:
+            pass
 
     def now(self):
         """Returns current state"""
-        return self.state
+        return int(self.state)
 
     def next(self):
         """Process and return next state"""
         self.state = (self.state * self.m + self.c) % self.n
-        return self.state
+        return int(self.state)
 
     def prev(self):
         """Process and return previous state"""
         m_inv = int(gcdext(self.m, self.n)[1])
         self.state = m_inv * (self.state - self.c) % self.n
-        return self.state
+        return int(self.state)
 
     def crack(self, seq):
         """Cracks LCG from at least 6 known states"""
         self.n, self.m, self.c = _crack_unknown_modulus(seq)
         self.state = seq[-1]
-        return self.n, self.m, self.c
+        return int(self.n), int(self.m), int(self.c)
