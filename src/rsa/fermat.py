@@ -10,7 +10,7 @@ def factorize(n):
     a = isqrt(n)
     bb = pow(a, 2) - n
     while not is_square(bb):
-        bb += pow(a, 2) + 1
+        bb += 2 * a + 1
         a += 1
     b = isqrt(bb)
     p, q = int(a + b), int(a - b)
