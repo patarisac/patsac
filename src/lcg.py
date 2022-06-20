@@ -1,6 +1,6 @@
 __all__ = ["LCG"]
 
-from .libraries import gcdext, gcd, reduce, invert
+from patsac.libraries import gcdext, gcd, reduce, invert
 
 
 # reference : https://github.com/Macmod/lcgcrack
